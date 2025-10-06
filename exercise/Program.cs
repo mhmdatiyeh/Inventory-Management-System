@@ -12,7 +12,69 @@ namespace exercise
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to The Inventory Managment Console");
+            // متغير للتحكم في استمرار اللوب
+            bool running = true;
+            Inventory i = new Inventory();
+            
+            // وهون بدنا نعمل لوب يضل شغال طول ما انا مش كابس على خروج
+            while (running)
+            {
+                Console.WriteLine("\nWelcome to The Inventory Managment Console");
+                Console.WriteLine("1. Add Product");
+                Console.WriteLine("2. View All Products");
+                Console.WriteLine("3. Edit Product");
+                Console.WriteLine("4. Delete Product");
+                Console.WriteLine("5. Search Product");
+                Console.WriteLine("6. Exit");
+                Console.Write("Choose an option: ");
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        Console.WriteLine("ADD your product now:");
+                        Console.Write("Product Name: ");
+                        string name = Console.ReadLine();
+                        Console.Write("Price: ");
+                        double price = Convert.ToDouble(Console.ReadLine());
+                        Console.Write("Quantity: ");
+                        int quantity = Convert.ToInt32(Console.ReadLine());
+                        i.AddProduct(new Product(name, price, quantity));
+                      break;
+
+                    case "2":
+                        i.ViewAllProducts();
+                      break;
+
+                    case "3":
+                        Console.Write("Enter product name you want to edit or update : ");
+                        string editName = Console.ReadLine();
+                        i.EditProduct(editName);
+                      break;
+
+                    case "4":
+                        Console.Write("Enter product name you want to delete : ");
+                        string deleteName = Console.ReadLine();
+                        i.DeleteProduct(deleteName);
+                      break;
+
+                    case "5":
+                        Console.Write("Enter product name you want to search about : ");
+                        string searchName = Console.ReadLine();
+                        i.SearchProduct(searchName);
+                      break;
+
+                    case "6":
+                        running = false;
+                      break;
+
+                    default:
+                        Console.WriteLine("Invalid choice!");
+                        break;
+                }
+            }
+            Console.WriteLine("Exiting...");
         }
         public class Product
         {

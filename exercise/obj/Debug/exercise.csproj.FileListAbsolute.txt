@@ -5,3 +5,4 @@ C:\Users\PAL WEB\source\repos\exercise\exercise\bin\Debug\exercise.exe
 C:\Users\PAL WEB\source\repos\exercise\exercise\bin\Debug\exercise.pdb
 C:\Users\PAL WEB\source\repos\exercise\exercise\obj\Debug\exercise.exe
 C:\Users\PAL WEB\source\repos\exercise\exercise\obj\Debug\exercise.pdb
+C:\Users\PAL WEB\source\repos\exercise\exercise\obj\Debug\exercise.exe.config
