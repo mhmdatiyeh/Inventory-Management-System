@@ -24,7 +24,10 @@ namespace exercise
                 this.productPrice = productPrice;
                 this.productQuantity = productQuantity;
             }
-
+            /*
+               in default when you write Console.Writeline(); it calls the ToString(); method, so we override the tostring method
+               to customize the displaying data of the prduct objects.
+             */
             public override string ToString()
             {
                 return $"Product name : {productName} --- Product price : {productPrice} --- Product quantity : {productQuantity}";
