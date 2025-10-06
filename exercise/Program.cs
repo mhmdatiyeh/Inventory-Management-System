@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace exercise
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to The Inventory Console");
+            Console.WriteLine("Welcome to The Inventory Managment Console");
         }
         public class Product
         {
@@ -55,6 +56,30 @@ namespace exercise
                 {
                     Console.WriteLine(p.ToString()); // here, the ToString(); method that we ovrrrided it will be called.
                 }
+            }
+            public void EditProduct(string name)
+            {
+                //هون بدنا نبحث اذا الاسم اللي دخله اليوزر موجود ولا لا مع مراعاة عدم الحساسية بالاحرف كبيرة ولا صغيرة :
+                Product p = products.Find(pr => pr.productName.Equals(name, StringComparison.OrdinalIgnoreCase));
+                if(p == null)
+                {
+                    Console.WriteLine("# Product not Existed #");
+                    return;
+                }
+                // Read new valuse form the user and store them in local variables , note to convert the types becasue the readline recieves a string from the user
+                Console.WriteLine("Update/Change the product : ");
+                Console.Write("Enter the new Name : ");
+                string newName = Console.ReadLine();
+                Console.Write("Enter the new Price : ");
+                double newPrice = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter the new Qauntity : ");
+                int newQuantity = Convert.ToInt32(Console.ReadLine());
+                
+                // setteing the new vlaues that we got , and update the old valuse:
+                p.productName = newName;
+                p.productPrice = newPrice;
+                p.productQuantity = newQuantity;
+                Console.WriteLine("The product updated successfully !");
             }
         }
 
