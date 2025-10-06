@@ -42,6 +42,20 @@ namespace exercise
                 products.Add(p);
                 Console.WriteLine("#PRODUCT ADDED SUCCESSFULLY#");
             }
+            public void ViewAllProducts()
+            {
+                if(products.Count == 0)
+                {
+                    Console.WriteLine("#INVENTORY IS EMPTY#");
+                    return;   // هاي عشان يطلع من الميثود وما يكمل 
+                }
+                Console.WriteLine("# you have in the Inventory " +  products.Count + "Products");
+                Console.WriteLine("All products : ");
+                foreach(Product p in products)
+                {
+                    Console.WriteLine(p.ToString()); // here, the ToString(); method that we ovrrrided it will be called.
+                }
+            }
         }
 
     }
