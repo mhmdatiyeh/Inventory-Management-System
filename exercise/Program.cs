@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace exercise
 {
@@ -92,6 +93,17 @@ namespace exercise
                 }
                 products.Remove(p);
                 Console.WriteLine("Product Removed successfully");
+            }
+            public void SearchProduct(string name)
+            {
+                //هون بدنا نبحث اذا الاسم اللي دخله اليوزر موجود ولا لا مع مراعاة عدم الحساسية بالاحرف كبيرة ولا صغيرة :
+                Product p = products.Find(pr => pr.productName.Equals(name, StringComparison.OrdinalIgnoreCase));
+                if (p == null)
+                {
+                    Console.WriteLine("# Product not Existed #");
+                    return;
+                }
+                Console.WriteLine(p);
             }
         }
 
