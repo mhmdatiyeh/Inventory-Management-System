@@ -33,6 +33,16 @@ namespace exercise
                 return $"Product name : {productName} --- Product price : {productPrice} --- Product quantity : {productQuantity}";
             }
         }
+        public class Inventory
+        {
+            private List<Product> products = new List<Product>();
+
+            public void AddProduct(Product p) 
+            {
+                products.Add(p);
+                Console.WriteLine("#PRODUCT ADDED SUCCESSFULLY#");
+            }
+        }
 
     }
 }

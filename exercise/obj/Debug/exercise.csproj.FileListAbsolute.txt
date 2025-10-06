@@ -1,0 +1,2 @@
+C:\Users\PAL WEB\source\repos\exercise\exercise\obj\Debug\exercise.csproj.AssemblyReference.cache
+C:\Users\PAL WEB\source\repos\exercise\exercise\obj\Debug\exercise.csproj.CoreCompileInputs.cache
