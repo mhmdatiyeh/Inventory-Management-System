@@ -81,6 +81,18 @@ namespace exercise
                 p.productQuantity = newQuantity;
                 Console.WriteLine("The product updated successfully !");
             }
+            public void DeleteProduct(string name)
+            {
+                //هون بدنا نبحث اذا الاسم اللي دخله اليوزر موجود ولا لا مع مراعاة عدم الحساسية بالاحرف كبيرة ولا صغيرة :
+                Product p = products.Find(pr => pr.productName.Equals(name, StringComparison.OrdinalIgnoreCase));
+                if (p == null)
+                {
+                    Console.WriteLine("# Product not Existed #");
+                    return;
+                }
+                products.Remove(p);
+                Console.WriteLine("Product Removed successfully");
+            }
         }
 
     }
